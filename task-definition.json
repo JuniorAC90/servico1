@@ -18,6 +18,12 @@
             "environment": [],
             "mountPoints": [],
             "volumesFrom": [],
+            "secrets": [
+                {
+                    "name": "USUARIO",
+                    "valueFrom": "arn:aws:secretsmanager:us-east-2:812945124831:secret:teste-Dzr5tB:usuario::"
+                }
+            ],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
