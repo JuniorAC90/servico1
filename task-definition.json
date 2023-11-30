@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:812945124831:task-definition/servico1:5",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:812945124831:task-definition/servico1:7",
     "containerDefinitions": [
         {
             "name": "servico1",
-            "image": "812945124831.dkr.ecr.us-east-2.amazonaws.com/servico1",
+            "image": "812945124831.dkr.ecr.us-east-2.amazonaws.com/servico1:3806c8cc6370856e37821fae4ba7c1b4327ea2af",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -27,15 +25,14 @@
                     "awslogs-group": "/ecs/servico1",
                     "awslogs-region": "us-east-2",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             }
         }
     ],
     "family": "servico1",
     "executionRoleArn": "arn:aws:iam::812945124831:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
-    "revision": 5,
+    "revision": 7,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -55,9 +52,6 @@
             "name": "ecs.capability.execution-role-ecr-pull"
         },
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
@@ -74,7 +68,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-11-30T13:01:53.623Z",
-    "registeredBy": "arn:aws:iam::812945124831:root",
+    "registeredAt": "2023-11-30T13:58:40.477Z",
+    "registeredBy": "arn:aws:iam::812945124831:user/teste",
     "tags": []
 }
