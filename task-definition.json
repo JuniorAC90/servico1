@@ -1,46 +1,68 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:824663932203:task-definition/servico1:5",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:812945124831:task-definition/servico1:5",
     "containerDefinitions": [
         {
             "name": "servico1",
-            "image": "824663932203.dkr.ecr.us-east-1.amazonaws.com/servico1:d158ed14e65ecbef215b4aa2a658e6f0ce717cb6",
+            "image": "812945124831.dkr.ecr.us-east-2.amazonaws.com/servico1",
             "cpu": 0,
             "portMappings": [
                 {
+                    "name": "servico1-80-tcp",
                     "containerPort": 80,
                     "hostPort": 0,
-                    "protocol": "tcp"
+                    "protocol": "tcp",
+                    "appProtocol": "http"
                 }
             ],
             "essential": true,
             "environment": [],
+            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "secrets": [
-                {
-                    "name": "USUARIO",
-                    "valueFrom": "arn:aws:secretsmanager:us-east-1:824663932203:secret:teste-l1SRkm:usuario::"
-                }
-            ]
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/servico1",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
         }
     ],
     "family": "servico1",
-    "executionRoleArn": "arn:aws:iam::824663932203:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::812945124831:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
     "revision": 5,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
         {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
         },
         {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
             "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EXTERNAL",
         "EC2"
     ],
     "requiresCompatibilities": [
@@ -52,7 +74,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2022-09-18T00:45:16.991Z",
-    "registeredBy": "arn:aws:iam::824663932203:user/curso-ecs",
+    "registeredAt": "2023-11-30T13:01:53.623Z",
+    "registeredBy": "arn:aws:iam::812945124831:root",
     "tags": []
 }
